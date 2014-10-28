@@ -1,8 +1,8 @@
 ;; Vim mode for editing
-(require 'evil-matchit)
-(global-evil-matchit-mode 1)
-(require 'evil-surround)
-(global-evil-surround-mode 1)
+;; (require 'evil-matchit)
+;;(global-evil-matchit-mode 1)
+;;(require 'evil-surround)
+;;(global-evil-surround-mode 1)
 
 ;; Save all temp files to /tmp/
 (setq backup-directory-alist
@@ -20,7 +20,16 @@
 (package-install 'smartscan)
 (smartscan-mode 1)
 
+;; Clang Format
+(setq clang-format-executable "clang-format-3.5")
+
 ;; Start server
 ;; (server-start)
+
+;; eshell
+(require 'em-smart)
+(setq eshell-where-to-jump 'begin)
+(setq eshell-review-quick-commands nil)
+(setq eshell-smart-space-goes-to-end t)
 
 (provide 'personal)
